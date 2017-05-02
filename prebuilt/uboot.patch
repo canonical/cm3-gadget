@@ -1,8 +1,36 @@
+diff --git a/board/raspberrypi/rpi/rpi.c b/board/raspberrypi/rpi/rpi.c
+index 22e87a2..7da5213 100644
+--- a/board/raspberrypi/rpi/rpi.c
++++ b/board/raspberrypi/rpi/rpi.c
+@@ -103,6 +103,11 @@ static const struct rpi_model rpi_models_new_scheme[] = {
+ 		"bcm2835-rpi-zero.dtb",
+ 		false,
+ 	},
++	[0xa] = {
++		"Compute Module 3",
++		"bcm2837-rpi-3-b.dtb",
++		false,
++	},
+ };
+ 
+ static const struct rpi_model rpi_models_old_scheme[] = {
 diff --git a/include/configs/rpi.h b/include/configs/rpi.h
-index 4406366..1881f33 100644
+index 4406366..15b5cc8 100644
 --- a/include/configs/rpi.h
 +++ b/include/configs/rpi.h
-@@ -117,7 +117,7 @@
+@@ -103,11 +103,7 @@
+ #endif
+ 
+ /* Console UART */
+-#ifdef CONFIG_BCM2837
+-#define CONFIG_BCM283X_MU_SERIAL
+-#else
+ #define CONFIG_PL01X_SERIAL
+-#endif
+ #define CONFIG_CONS_INDEX		0
+ #define CONFIG_BAUDRATE			115200
+ 
+@@ -117,7 +113,7 @@
  					 sizeof(CONFIG_SYS_PROMPT) + 16)
  
  /* Environment */
@@ -11,7 +39,7 @@ index 4406366..1881f33 100644
  #define CONFIG_ENV_IS_IN_FAT
  #define FAT_ENV_INTERFACE		"mmc"
  #define FAT_ENV_DEVICE_AND_PART		"0:1"
-@@ -125,7 +125,12 @@
+@@ -125,7 +121,12 @@
  #define CONFIG_FAT_WRITE
  #define CONFIG_ENV_VARS_UBOOT_CONFIG
  #define CONFIG_SYS_LOAD_ADDR		0x1000000
@@ -25,7 +53,7 @@ index 4406366..1881f33 100644
  
  /* Shell */
  #define CONFIG_SYS_MAXARGS		16
-@@ -139,6 +144,7 @@
+@@ -139,6 +140,7 @@
  #define CONFIG_SETUP_MEMORY_TAGS
  #define CONFIG_CMDLINE_TAG
  #define CONFIG_INITRD_TAG
