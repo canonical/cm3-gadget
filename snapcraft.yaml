@@ -1,8 +1,8 @@
-name: pi3
+name: cm3
 version: 16.04-0.5
-summary: Raspberry Pi 3 support package
+summary: Raspberry Compute Module 3 support package
 description: |
- Support files for booting Raspberry Pi
+ Support files for booting Raspberry Compute Module 3
 type: gadget
 architectures:
   - armhf

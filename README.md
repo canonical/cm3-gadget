@@ -1,7 +1,7 @@
-# Raspberry Pi 3 Gadget Snap
+# Raspberry CM3 Gadget Snap
 
 This repository contains the official Ubuntu Core gadget snap for the Raspberry
-Pi 3.
+CM3.
 
 ## Gadget Snaps
 
@@ -12,7 +12,7 @@ https://github.com/snapcore/snapd/wiki/Gadget-snap
 ## Reporting Issues
 
 Please report all issues on the Launchpad project page
-https://bugs.launchpad.net/snap-pi3/+filebug
+https://bugs.launchpad.net/snap-cm3/+filebug
 
 We use Launchpad to track issues as this allows us to coordinate multiple
 projects better than what is available with Github issues.
@@ -43,12 +43,12 @@ mkenvimage -r -s 131072  -o uboot.env uboot.env.in
 
 ## Launchpad Mirror and Automatic Builds.
 
-All commits from the master branch of https://github.com/snapcore/pi3 are
-automatically mirrored by Launchpad to the https://launchpad.net/snap-pi3
+All commits from the master branch of https://github.com/snapcore/cm3 are
+automatically mirrored by Launchpad to the https://launchpad.net/snap-cm3
 project.
 
 The master branch is automatically built from the launchpad mirror and
 published into the snap store to the edge channel.
 
 You can find build history and other controls here:
-https://code.launchpad.net/~canonical-foundations/+snap/pi3
+https://code.launchpad.net/~canonical-foundations/+snap/cm3
