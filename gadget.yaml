@@ -1,6 +1,6 @@
-device-tree: bcm2710-rpi-3-b.dtb
+device-tree: bcm2710-rpi-cm3.dtb
 volumes:
-  pi3:
+  cm3:
     schema: mbr
     bootloader: u-boot
     structure:
