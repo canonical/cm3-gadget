@@ -1,0 +1,4 @@
+/scripts/init-bottom/udev "$@"
+[ -e /conf/param.conf ] && . /conf/param.conf
+/scripts/init-bottom/firstboot "$@"
+[ -e /conf/param.conf ] && . /conf/param.conf
