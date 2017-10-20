@@ -103,6 +103,16 @@ parts:
       else \
         ./configure; \
       fi
+    build: |
+      if [ "$(arch)" = "x86_64" ]; then
+        if [ ! -x /usr/bin/arm-linux-gnueabihf-gcc ]; then
+          echo "ERROR: You are cross building this snap, please install gcc-arm-linux-gnueabihf"
+          exit 1
+        fi
+        CROSS_COMPILE=arm-linux-gnueabihf- make
+      else
+        make
+      fi
     install: |
       rm -rf $SNAPCRAFT_PART_INSTALL/usr
       cp -a ../../../psplash/initrd .
