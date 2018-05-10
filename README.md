@@ -32,7 +32,7 @@ projects better than what is available with Github issues.
 To build the gadget snap locally on an armhf system please use `snapcraft`.
 
 To cross build this gadget snap on a PC please install the gcc-arm-linux-gnueabihf package
-before running `snapcraft`
+before running `snapcraft --target-arch=armhf`
 
 ## Launchpad Mirror and Automatic Builds.
 
