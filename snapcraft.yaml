@@ -4,6 +4,7 @@ summary: Raspberry Compute Module 3 support package
 description: |
  Support files for booting Raspberry Compute Module 3
 type: gadget
+base: core18
 architectures:
   - armhf
 confinement: strict
