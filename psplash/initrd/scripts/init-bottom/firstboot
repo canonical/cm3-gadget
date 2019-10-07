@@ -1,0 +1,19 @@
+#!/bin/sh -e
+
+PREREQS=""
+
+prereqs() { echo "$PREREQS"; }
+
+case "$1" in
+    prereqs)
+    prereqs
+    exit 0
+    ;;
+esac
+
+# check for /root/system-data/var/lib/snapd/state.json
+# if it does not exist, we are in first boot and will
+# generate keys and copy files around
+
+[ -e "/root/writable/system-data/var/lib/snapd/state.json" ] || \
+  /bin/psplash-write "MSG Doing first boot system initialization, please be patient..."
